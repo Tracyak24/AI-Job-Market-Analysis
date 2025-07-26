@@ -35,5 +35,7 @@ To ensure the dataset is analysis-ready by identifying and correcting data issue
 1. 🧹 Data Cleaning & Validation:
  
  • Duplicate Detection: Identified duplicated job listings using GROUP BY job_id and HAVING COUNT(*) > 1.
+ 
  • Missing Value Identification: Counted all rows with null values in critical fields like salary_usd, experience_level, company_name, etc.
+ 
  • Outlier & Inconsistency Checks: Flagged negative salaries as invalid entries, Identified values in remote_ratio outside the expected range (0%, 50%, 100%), and Examined unique values in experience_level to detect non-standard entries
