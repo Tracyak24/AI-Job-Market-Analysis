@@ -39,3 +39,42 @@ To ensure the dataset is analysis-ready by identifying and correcting data issue
   • Missing Value Identification: Counted all rows with null values in critical fields like salary_usd, experience_level, company_name, etc.
  
   • Outlier & Inconsistency Checks: Flagged negative salaries as invalid entries, Identified values in remote_ratio outside the expected range (0%, 50%, 100%), and Examined unique values   in experience_level to detect non-standard entries
+
+  • Row Count Verification: Counted the total number of records to confirm dataset size.
+
+  • Percentile Calculations for Salary (Q1 & Q3): Manually calculated 25th and 75th percentiles to support outlier filtering using zero-based indexing and LIMIT.
+
+  • Outlier Filtering: Filtered salary data between $0 and $260,794 based on IQR calculations for a cleaner analysis baseline.
+
+2. 📈 Exploratory Data Analysis:
+
+   • Top-Paying Job Titles: Calculated average salaries for each job_title and returned the top 5 highest-paying roles.
+
+   • Remote Work Trends by Company Size: Averaged remote_ratio for each company_size to understand remote work adoption patterns.
+
+   • Company Demand Indicators: Used average job_description_length as a proxy for hiring intent or role complexity, highlighting top 5 companies.
+
+   • Skills in High Demand: Parsed the required_skills comma-separated list using a numbers temporary table to simulate array splitting in SQL, and Counted occurrences of each skill and       returned the top 10 most frequent.
+
+   • Salary by Experience Level: Compared average salaries across experience levels using conditional filters to exclude outliers.
+
+# 💡 Value Proposition
+This project not only demonstrates data cleaning proficiency using SQL but also showcases how exploratory queries can be used to answer high-impact business questions. Whether you're a recruiter, job seeker, or industry analyst, this analysis reveals patterns that can guide recruitment strategy, job applications, compensation planning, and skill development.
+
+By transforming a raw dataset into a refined set of insights, this project highlights my capabilities in:
+
+• Data preparation & anomaly detection
+
+• Advanced SQL querying (including string manipulation, filtering, conditional logic, and aggregation)
+
+• Translating data into actionable intelligence
+
+# ✅ Key Takeaways
+
+• Data quality issues (duplicates, nulls, invalid values) must be resolved before analysis.
+
+• Data-driven insights reveal that experience level, company size, and skills significantly influence salary.
+
+• High-paying roles tend to require specialized skills, which can be identified and tracked.
+
+• Remote work flexibility varies widely across company sizes, offering insights for talent acquisition and workforce planning.
